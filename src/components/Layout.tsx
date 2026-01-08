@@ -271,7 +271,7 @@ export const Navbar: React.FC = React.memo(() => {
             <img src="/logo.png" alt="Korden Logo" className={`transition-all duration-500 object-contain ${scrolled ? 'w-9 h-9' : 'w-11 h-11'}`} />
           </div>
           <span className={`font-bold font-['Space_Grotesk'] tracking-widest text-white transition-all duration-500 ${scrolled ? 'text-sm' : 'text-base'}`}>
-            KORDEN
+            KORDEN TECHNOLOGY
           </span>
         </Link>
 

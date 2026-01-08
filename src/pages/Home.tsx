@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, SectionTitle } from '../components/UI';
-import { ChevronRight, Cpu, Globe, ShieldCheck, ArrowUpRight, Zap, Layers, Factory, Search, Plus, Minus, Lock, Server } from 'lucide-react';
+import { ChevronRight, Cpu, Globe, ShieldCheck, ArrowUpRight, Zap, Layers, Factory,Package, Search, Plus, Minus, Lock, Server } from 'lucide-react';
 import { SERVICES } from '../constants';
 import HeroBackground from '../components/HeroBackground';
 
@@ -78,55 +78,110 @@ const GlobePulse = () => (
 );
 
 const ScannerGrid = () => (
-  <div className="relative w-full h-full overflow-hidden flex items-center justify-center bg-[#050505]/50 group-hover:bg-[#050505]/30 transition-colors">
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(147,51,234,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(147,51,234,0.1)_1px,transparent_1px)] bg-[size:40px_40px] perspective-[500px] rotate-x-12 scale-150 opacity-40 animate-[gridMove_20s_linear_infinite]" />
-    <div className="absolute top-0 left-0 w-full h-[15%] bg-gradient-to-b from-amber-500/0 via-amber-500/10 to-amber-500/0 animate-[scan_3s_ease-in-out_infinite] z-0" />
-    <div className="absolute top-0 left-0 w-full h-[2px] bg-amber-500/50 blur-[2px] animate-[scan_3s_ease-in-out_infinite] z-10 shadow-[0_0_20px_#F59E0B]" />
-    <div className="relative z-20 flex flex-col items-center gap-6 transform group-hover:scale-105 transition-transform duration-500">
-       <div className="relative">
-          <div className="absolute inset-[-15px] border border-green-500/20 rounded-full animate-[spin_10s_linear_infinite_reverse] border-t-transparent border-l-transparent" />
-          <ShieldCheck className="w-24 h-24 text-purple-400/90 drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" strokeWidth={1} />
-          <Lock className="w-8 h-8 text-amber-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-bounce" strokeWidth={2} />
+  <div className="relative w-full h-full overflow-hidden flex items-center justify-center bg-[#050505] group">
+    {/* Ambient Glows instead of Grid */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent_70%)]" />
+    
+    {/* Radar Ripples */}
+    <div className="absolute w-40 h-40 border border-white/5 rounded-full animate-[ping_3s_linear_infinite]" />
+    <div className="absolute w-64 h-64 border border-white/5 rounded-full animate-[ping_4s_linear_infinite_1s]" />
+
+    {/* HUD Target Frame */}
+    <div className="absolute w-64 h-64 flex items-center justify-center pointer-events-none">
+       <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-amber-500/60" />
+       <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-amber-500/60" />
+       <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-amber-500/60" />
+       <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-amber-500/60" />
+    </div>
+
+    {/* Enhanced Scanning Bar */}
+    <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-amber-500/10 to-transparent z-20 animate-[scan_3s_ease-in-out_infinite] border-t border-amber-500/40 shadow-[0_-10px_20px_rgba(245,158,11,0.1)]" />
+
+    <div className="relative z-20 flex flex-col items-center">
+       <div className="p-6 rounded-3xl bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-transform duration-500 group-hover:scale-110">
+          <ShieldCheck className="w-20 h-20 text-purple-400" strokeWidth={1} />
        </div>
-       <div className="flex flex-col gap-1 items-center bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full border border-white/5">
-          <div className="flex gap-1">
-             <div className="w-12 h-1 bg-green-500/50 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
-             <div className="w-2 h-1 bg-green-500/30 rounded-full"></div>
-             <div className="w-2 h-1 bg-green-500/30 rounded-full"></div>
+       
+       <div className="mt-8 flex flex-col items-center gap-1.5">
+          <div className="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
+             <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_#22c55e]" />
+             <span className="text-[9px] font-mono text-green-500 uppercase tracking-widest font-bold">Secure_Locate</span>
           </div>
-           <span className="text-[10px] text-green-500 font-mono tracking-widest uppercase animate-pulse">System Secure</span>
+          <span className="text-[7px] text-slate-500 font-mono uppercase tracking-tighter opacity-50">Trace ID: KRD-8842</span>
        </div>
     </div>
   </div>
 );
 
+const KittingBox = () => (
+  <div className="relative w-full h-full flex items-center justify-center group bg-[#050505] overflow-hidden">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.05),transparent_70%)]" />
+    <div className="relative w-48 h-48 flex items-center justify-center">
+      {/* Fragments Animation */}
+      <div className="absolute top-0 left-0 w-8 h-8 bg-purple-500/20 border border-purple-500/40 rounded animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-10 h-10 bg-amber-500/20 border border-amber-500/40 rounded animate-pulse" />
+      
+      <div className="relative z-10 w-40 h-40 border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center bg-black/40 backdrop-blur-sm">
+        <div className="w-24 h-24 bg-gradient-to-br from-zinc-800 to-black border border-white/20 rounded-xl shadow-2xl flex items-center justify-center group-hover:border-amber-500 transition-all duration-700">
+          <Package className="w-12 h-12 text-amber-500" strokeWidth={1} />
+        </div>
+        <div className="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-amber-500" />
+        <div className="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-amber-500" />
+      </div>
+    </div>
+  </div>
+);
+
 const ChipFlow = () => (
-   <div className="relative w-full h-full flex items-center justify-center">
-      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#9333EA 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
-      <div className="w-48 h-48 bg-black/80 backdrop-blur-xl border border-purple-500/30 relative flex items-center justify-center shadow-[0_0_60px_rgba(147,51,234,0.2)] rounded-2xl overflow-hidden group-hover:border-purple-500/60 transition-all duration-500">
-         <div className="absolute inset-0">
-             <div className="absolute top-1/2 left-0 w-full h-[1px] bg-purple-500/30"></div>
-             <div className="absolute top-0 left-1/2 h-full w-[1px] bg-purple-500/30"></div>
-             <div className="absolute top-4 left-4 right-4 bottom-4 border border-white/5 rounded-lg"></div>
-             <div className="absolute top-1/2 left-0 w-2 h-2 bg-amber-500 rounded-full animate-[ping_2s_linear_infinite]" />
+  <div className="relative w-full h-full flex items-center justify-center group overflow-hidden bg-[#050505]">
+    {/* 1. Micro-Circuit Background */}
+    <div className="absolute inset-0 opacity-[0.03] scale-150" 
+         style={{ backgroundImage: `radial-gradient(#fff 1px, transparent 1px)`, backgroundSize: '20px 20px' }} />
+
+    {/* 2. FULL WIDTH DATA FLOW (Line passes behind the chip) */}
+    <div className="absolute inset-0 flex items-center z-0 pointer-events-none">
+       <div className="relative w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/20 to-transparent">
+          
+          {/* Main fast particle */}
+          <div className="absolute top-1/2 -translate-y-1/2 w-40 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent animate-[shimmer_3s_linear_infinite]" />
+          
+          {/* Secondary smaller particle */}
+          <div className="absolute top-1/2 -translate-y-1/2 w-24 h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-[shimmer_3s_linear_infinite_1.5s]" />
+          
+          {/* White flash particle for speed feel */}
+          <div className="absolute top-1/2 -translate-y-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2s_linear_infinite_0.5s]" />
+       </div>
+    </div>
+
+    {/* 3. THE PROCESSOR CHIP (Set to z-10 to stay above the line) */}
+    <div className="relative z-10">
+      <div className="w-48 h-48 bg-zinc-900 border border-white/10 relative flex items-center justify-center shadow-[0_0_50px_rgba(0,0,0,0.8)] rounded-3xl group-hover:border-purple-500/40 transition-all duration-700">
+         
+         {/* Hardware Detail: Pins */}
+         <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex gap-4">
+            {[1, 2, 3, 4].map(i => <div key={i} className="w-1.5 h-3 bg-zinc-800 border border-white/10 rounded-full" />)}
          </div>
-         <Cpu className="w-20 h-20 text-slate-100 relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" strokeWidth={1} />
-         <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-amber-500 shadow-[0_0_10px_#F59E0B]"></div>
-         <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-amber-500 shadow-[0_0_10px_#F59E0B]"></div>
-         <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-purple-500/50"></div>
-         <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-purple-500/50"></div>
+         <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex gap-4">
+            {[1, 2, 3, 4].map(i => <div key={i} className="w-1.5 h-3 bg-zinc-800 border border-white/10 rounded-full" />)}
+         </div>
+
+         {/* Inner Glass Core */}
+         <div className="w-32 h-32 bg-black/60 backdrop-blur-xl border border-white/5 rounded-2xl flex items-center justify-center overflow-hidden">
+            <Cpu className="w-16 h-16 text-slate-100 relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" strokeWidth={1} />
+            
+            {/* Inner pulsing light */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-amber-500/10 animate-pulse" />
+         </div>
+
+         {/* Corner Accents */}
+         <div className="absolute top-3 left-3 w-4 h-4 border-t border-l border-amber-500/40 rounded-tl" />
+         <div className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-amber-500/40 rounded-br" />
       </div>
-      <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/40 to-transparent">
-             <div className="absolute top-1/2 -translate-y-1/2 left-0 w-32 h-[3px] bg-amber-500 blur-[3px] animate-[shimmer_2s_linear_infinite]" />
-             <div className="absolute top-1/2 -translate-y-1/2 left-0 w-20 h-[1px] bg-white animate-[shimmer_2s_linear_infinite]" />
-          </div>
-          <div className="absolute left-1/2 top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-purple-500/40 to-transparent">
-             <div className="absolute left-1/2 -translate-x-1/2 top-0 h-32 w-[3px] bg-amber-500 blur-[3px] animate-[shimmer_2.5s_linear_infinite]" />
-             <div className="absolute left-1/2 -translate-x-1/2 top-0 h-20 w-[1px] bg-white animate-[shimmer_2.5s_linear_infinite]" />
-          </div>
-      </div>
-   </div>
+
+      {/* Outer Radial Glow */}
+      <div className="absolute -inset-10 bg-purple-600/5 blur-[80px] rounded-full -z-10 animate-pulse" />
+    </div>
+  </div>
 );
 
 const VerticalAccordionItem: React.FC<{
@@ -390,7 +445,9 @@ const Home: React.FC = () => {
           </h1>
           
           <p className="text-slate-400 text-base md:text-lg lg:text-xl mb-10 max-w-2xl mx-auto leading-relaxed px-4">
-            Delivering the advanced electronic components that drive modern industry. Your strategic partner for semiconductors, sensors, and next-gen supply chain solutions.
+          Stop waiting on 12 week lead times. Streamline
+your Bill of Materials with specialized sourcing strategies for niche
+and high demand Components and Automation hardware.
           </p>
           
           <div className="hero-btns flex flex-wrap gap-4 justify-center">
@@ -406,24 +463,38 @@ const Home: React.FC = () => {
 
       {/* Features Section */}
       <section className="py-24 md:py-32 bg-[#020202] relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-purple-900/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[800px] bg-purple-900/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-5xl mx-auto px-4 relative z-10">
           <SectionTitle title="The Korden Advantage" subtitle="Why Choose Us" />
           <div 
-            className="mt-16 flex flex-col gap-4 h-auto md:h-[700px] w-full"
+            className="mt-16 flex flex-col gap-4 h-auto md:h-[900px] w-full"
             onMouseLeave={() => setActiveAccordion(0)}
           >
             <VerticalAccordionItem 
-              id={1} title="Global Network" subtitle="Borderless Sourcing" desc="Access a vast, resilient network of tier-1 manufacturers across Asia and Europe. We eliminate regional bottlenecks and ensure continuous supply even in volatile markets."
+              id={1} title="Strategic Global Access" subtitle="Borderless Sourcing" desc="Direct supply lines to component hubs in Asia and Europe. We
+              bypass standard distribution bottlenecks to secure allocation for
+              hard to find components and Automation hardware when local
+              stock runs dry"
               icon={Globe} Graphic={GlobePulse} isActive={activeAccordion === 1} onActivate={handleAccordionActivate}
             />
              <VerticalAccordionItem 
-              id={2} title="Quality Assured" subtitle="Zero Compromise" desc="Rigorous anti-counterfeit testing in our certified labs guarantees 100% authenticity for every component. From microscopic inspection to functional testing, we verify everything."
+              id={2} title="Obsolete & Shortage Sourcing" subtitle="Zero Compromise" desc="Specialized procurement for End-of-Life (EOL) and shortage
+              components. Whether it’s a discontinued PLC or a Mil-Spec
+              connector, we track down the inventory that keeps your legacy
+              machines running.
+              "
               icon={ShieldCheck} Graphic={ScannerGrid} isActive={activeAccordion === 2} onActivate={handleAccordionActivate}
             />
+            <VerticalAccordionItem 
+              id={3} title="Unified Kitting Solutions" subtitle="Logistics Master" desc="We consolidate your Bill of Materials. Receive your Motherboard, Servo Drive, and Cable assemblies as a single, pre-labeled SKU to reduce logistics complexity."
+              icon={Package} Graphic={KittingBox} isActive={activeAccordion === 3} onActivate={handleAccordionActivate}
+            />
              <VerticalAccordionItem 
-              id={3} title="Market Intelligence" subtitle="Procurement First" desc="We optimize your Bill of Materials (BOM). Our market insights help you anticipate shortages, stabilize costs, and secure stock when others can't."
-              icon={Cpu} Graphic={ChipFlow} isActive={activeAccordion === 3} onActivate={handleAccordionActivate}
+              id={4} title="Market Intelligence" subtitle="Procurement First" desc="We don't just take orders; we forecast risks. Our team tracks
+              global raw material shortages and lead time trends, advising you
+              on strategic 'Stocking Buys' before the market tightens.
+              "
+              icon={Cpu} Graphic={ChipFlow} isActive={activeAccordion === 4} onActivate={handleAccordionActivate}
             />
           </div>
         </div>

@@ -143,7 +143,9 @@ const WhatsAppHero = React.memo(() => (
                   Chat on WhatsApp
               </h3>
               <p className="text-white/90 text-lg font-medium max-w-md leading-relaxed">
-                  Direct line to our engineering team. <br/>
+              Skip the email
+backlog. Connect directly with a Sourcing Lead to fast-track your
+quote and lock in stock availability <br/>
                   <span className="opacity-75 text-sm">Typical response time: Under 5 minutes.</span>
               </p>
           </div>
@@ -198,7 +200,8 @@ const Contact: React.FC = () => {
                 href={`tel:${COMPANY_INFO.phone}`}
               />
               <ActionCard 
-                label="Electronic Mail" 
+                label="SUBMIT BILL OF
+                MATERIALS (BOM)" 
                 value={COMPANY_INFO.email} 
                 icon={Mail} 
                 href={`mailto:${COMPANY_INFO.email}`}

@@ -286,7 +286,11 @@ const About: React.FC = () => {
              {/* 3. Description */}
              <div className="overflow-hidden">
                  <motion.p variants={textVariants} className="text-lg md:text-2xl text-slate-400 max-w-3xl leading-relaxed font-light font-['Space_Grotesk']">
-                    Bridging the gap between global semiconductor innovation and local manufacturing reality. We don't just ship parts; we engineer reliability for the next generation of Indian hardware.
+                 Bridging the gap between Global Availability and Local
+Production. We don't just ship parts; we secure the critical
+Motion, Control, and Interconnect systems for applications
+ranging from Factory Automation to Edge Computing.
+
                  </motion.p>
              </div>
           </motion.div>
@@ -295,10 +299,10 @@ const About: React.FC = () => {
        {/* STATS STRIP */}
        <div className="stat-strip border-y border-white/5 bg-white/[0.02] backdrop-blur-sm mb-32 relative z-20">
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-white/5">
-             <StatItem label="Support & Sourcing" value="24/7" suffix="+" />
+             <StatItem label="Quote Response”" value="4" suffix="Hour" />
              <StatItem label="Supplier Network" value="Global" suffix="" />
-             <StatItem label="Sourcing Partners" value="Tier-1" suffix="" />
-             <StatItem label="Client Trust" value="100" suffix="%" />
+             <StatItem label="Delivery Model”" value="JIT" suffix="" />
+             <StatItem label="Lead-Time Drift" value="Zero" suffix="" />
           </div>
        </div>
 
@@ -336,13 +340,20 @@ const About: React.FC = () => {
                   
                   <div className="space-y-6 text-lg text-slate-400 font-light leading-relaxed">
                     <p>
-                        In an era where a single missing capacitor can halt an entire production line, <span className="text-white font-medium">reliability is the only currency that matters</span>.
+                    Our Core Mission: Killing Lead Times.
+In an industry defined by 12 week waiting periods, speed is the only
+currency that matters. A single missing connector shouldn't halt a
+multi-crore rupees production line. 
                     </p>
                     <p>
-                        Founded in {COMPANY_INFO.founded}, Korden Technologies emerged from a simple observation: the Indian electronics manufacturing sector needed a partner, not just a vendor. A partner who understands that "Just-in-Time" isn't a buzzword it's a survival strategy.
+                    Korden Technologies was founded on a simple premise: Indian OEMs
+need a <span className="text-white font-medium">Just-In-Time sourcing partner,</span> not another slow distributor.
+We don't just take orders; we hunt down allocation.
                     </p>
                     <p>
-                        We leverage data-driven logistics and deep supplier relationships to navigate the volatility of the global component market, ensuring your innovation never stalls.
+                    By leveraging direct access to global component hubs and navigating
+complex cross border logistics, we ensure the critical parts you need
+are on your dock when you need them, not months later.
                     </p>
                   </div>
                </div>

@@ -8,11 +8,18 @@ import { motion } from 'framer-motion'; // Import Framer Motion
 
 // --- CUSTOM CAPABILITIES MAPPING ---
 const CAPABILITIES_MAP: Record<string, string[]> = {
-  's1': ['Global Sourcing', 'Obsolete Part Tracking', 'Shortage Management', 'BOM Kitting'],
+  's1': ['Mil-Spec & Circular', 'Sensors & Encoders', 'Precision Push-Pull', 'Heavy Duty Power'],
   's2': ['Server Racks', 'Cooling Systems', 'Power Distribution Units', 'Cable Management'],
-  's3': ['JIT Delivery', 'Inventory Forecasting', 'Warehousing', 'Logistics Optimization'],
-  's4': ['Visual Inspection', 'Decapsulation', 'X-Ray Analysis', 'Solderability Testing']
+  's3': ['Servo & Drive Bundles', 'PLC / HMI Integration', 'Custom Cable Sets', 'Single-SKU Procurement'],
+  's4': ['Rugged Fanless PCs', 'AI Inference Systems', 'Machine Vision Cameras', 'HMI & Panel PCs']
 };
+
+const last =[
+   "Initialize Request",
+   "Initialize Request",
+   " REQUEST KIT PRICING",
+   "Initialize Request"
+]
 
 // --- OPTIMIZED SUB-COMPONENTS (Memoized to prevent Lag) ---
 
@@ -75,16 +82,25 @@ const ServiceCardHorizontal: React.FC<{ service: any; index: number }> = React.m
 
          <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
             <Link to="/contact" className="group/btn inline-flex items-center gap-3 text-white font-bold font-['Space_Grotesk'] tracking-wide uppercase text-sm hover:text-amber-500 transition-colors">
-               <span>Initialize Request</span>
+               <span>{last[index]}</span>
                <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-amber-500 group-hover/btn:bg-amber-500/10 transition-all">
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:-rotate-45" />
                </div>
             </Link>
             <Activity className="w-5 h-5 text-slate-700 group-hover:text-green-500 transition-colors" />
+            
          </div>
 
+        
+
+
+              
+
+
       </div>
+      
     </div>
+    
   );
 });
 
@@ -174,6 +190,15 @@ const Services: React.FC = () => {
         {SERVICES.map((service, index) => (
           <ServiceCardHorizontal key={service.id} service={service} index={index} />
         ))}
+
+<div className="inline-flex flex-col sm:flex-row items-start sm:items-center gap-3 p-4 rounded-xl bg-amber-500/5 border border-amber-500/20 max-w-2xl">
+  <span className="px-2 py-0.5 rounded bg-amber-500 text-black text-[10px] font-black uppercase">
+    Note
+  </span>
+  <p className="text-slate-200 text-sm md:text-base">
+    <strong className="text-amber-500">Shortage Specialists:</strong> We locate hard-to-find connectors and contacts when authorized channels quote 12+ weeks.
+  </p>
+</div>
       </div>
 
       {/* PROCESS SECTION */}
@@ -197,7 +222,7 @@ const Services: React.FC = () => {
                    desc="Leveraging our global network to secure authentic parts at competitive rates." icon={Settings}
                 />
                  <ProcessStep 
-                   number="03" title="Verification" 
+                   number="03" title="Unified Kit process" 
                    desc="Rigorous QA testing in our labs to ensure every component meets spec." icon={CheckCircle2}
                 />
                  <ProcessStep 
@@ -227,18 +252,21 @@ const Services: React.FC = () => {
                 <div className="flex-1 text-center md:text-left">
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_#22c55e]" />
-                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-300">Custom Engineering</span>
+                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-300">STRATEGIC SOURCING</span>
                     </div>
 
                     <h3 className="text-4xl md:text-6xl font-bold text-white font-['Syne'] leading-tight mb-6">
-                        Need a specialized <br />
+                    Can't Find <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-white to-amber-400 animate-gradient-x">
-                            Solution?
+                        Critical Parts?
                         </span>
                     </h3>
                     
                     <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
-                        Standard catalogs don't cover every edge case. Our engineering team builds custom procurement strategies tailored to your exact technical specifications.
+                    Standard catalogs don't cover every edge case. When authorized
+channels quote 12-week+ lead times, our global procurement team
+activates. We track down allocated, obsolete, and hard-to-find
+components to keep your production line running.
                     </p>
                 </div>
 

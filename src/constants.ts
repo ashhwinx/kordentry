@@ -4,10 +4,10 @@ import { Cpu, Factory, Globe, Zap, Microchip, Layers, Wifi, Battery, Search } fr
 
 export const COMPANY_INFO = {
   name: "Korden Technologies",
-  address: "1204, Tech Park, Andheri East, Mumbai, Maharashtra 400093",
-  email: "connect@korden.tech",
+  address: ": B/2402, 24th Floor, Tulsi Tower, M.G road, Goregaon West, Mumbai, Maharashtra 400104",
+  email: "sales@korden.tech",
   phone: "+91 98765 43210",
-  whatsapp: "+91 98765 43210",
+  whatsapp: "+91 84529 88088",
   founded: "2024"
 };
 
@@ -22,8 +22,8 @@ export const NAV_LINKS: NavLink[] = [
 export const SERVICES: ServiceItem[] = [
   {
     id: 's1',
-    title: 'Component Sourcing',
-    description: 'Rapid procurement of Semiconductors, ICs, and Interconnects. We specialize in hard-to-find parts and shortage management.',
+    title: 'High Performance Interconnects',
+    description: 'Connectivity is the single most common point of failure in industrial environments. We source and stock rugged, high-reliabilityinterconnects designed to withstand vibration, moisture (IP67/68), and EMI interference. Whether you need Mil-Spec circular connectors for a defense chassis or high-speed M12 data cables for AMR sensors, we secure the exact pin configurations that standard distributors often leave on backorder.',
     icon: 'Globe'
   },
   {
@@ -34,14 +34,14 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: 's3',
-    title: 'Supply Chain Management',
-    description: 'Just-in-time delivery systems designed to optimize your inventory costs and reduce production downtime.',
+    title: 'Unified Automation Kits',
+    description: 'Stop managing 5 different vendors for one machine. We consolidate your Motion and Control hardware into a single,pre-validated SKU.From Servo Motors and Drives to PLCs and HMIs, receive your complete "Retrofit Kit" in one shipment, ready for immediate installation. We simplify your Bill of Materials so you can focus on assembly.',
     icon: 'Factory'
   },
   {
     id: 's4',
-    title: 'Quality Testing',
-    description: 'Rigorous counterfeit detection and functional testing and ensuring 100% authentic components.',
+    title: 'Industrial Computing & Edge AI',
+    description: 'Powering the intelligence of modern machinery. We source and stock rugged, fanless Industrial PCs (IPCs) and AI Inference Systems designed for harsh environments. Whether you need high-processing power for AI Visual Inspection or vibration-resistant computing for Defense & AMRs, we secure the specific configurations that standard IT vendors cannot supply.',
     icon: 'Search'
   }
 ];
