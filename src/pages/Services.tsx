@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { SectionTitle } from '../components/UI';
-import { SERVICES } from '../constants';
+import { SERVICE } from '../constants';
 import * as Icons from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, Settings, Truck, Search, Activity, ChevronRight } from 'lucide-react';
@@ -177,7 +177,7 @@ const Services: React.FC = () => {
 
       {/* HORIZONTAL CARD LIST */}
       <div className="max-w-6xl mx-auto flex flex-col gap-8 md:gap-16 service-list relative z-10 mb-40">
-        {SERVICES.map((service, index) => (
+        {SERVICE.map((service, index) => (
           <ServiceCardHorizontal key={service.id} service={service} index={index} />
         ))}
 

@@ -6,7 +6,7 @@ export const COMPANY_INFO = {
   name: "Korden Technologies",
   address: "B/2402, 24th Floor, Tulsi Tower, M.G road, Goregaon West, Mumbai, Maharashtra 400104",
   email: "sales@korden.tech",
-  phone: "+91 98765 43210",
+  phone: "+91 84529 88088  ",
   whatsapp: "+91 84529 88088",
   founded: "2024"
 };
@@ -23,7 +23,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's1',
     title: 'High Performance Interconnects',
-    description: 'Connectivity is the single most common point of failure in industrial environments. We source and stock rugged, high-reliabilityinterconnects designed to withstand vibration, moisture (IP67/68), and EMI interference. Whether you need Mil-Spec circular connectors for a defense chassis or high-speed M12 data cables for AMR sensors, we secure the exact pin configurations that standard distributors often leave on backorder.',
+    description: 'From rugged Mil-Spec connectors to high speed M12 data cables. We source the critical connectivity solutions that power Autonomous Robots and Defense systems. Specialized in finding "hard-to-get" pin configurations.',
     icon: 'Globe'
   },
   {
@@ -35,7 +35,35 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 's3',
     title: 'Unified Automation Kits',
-    description: 'Stop managing 5 different vendors for one machine. We consolidate your Motion and Control hardware into a single,pre-validated SKU.From Servo Motors and Drives to PLCs and HMIs, receive your complete "Retrofit Kit" in one shipment, ready for immediate installation. We simplify your Bill of Materials so you can focus on assembly.',
+    description: 'Streamline your procurement. We customise and bundle Servos, PLCs, and Drives into application ready "Retrofit Kits" based on your applications. Receive your entire Bill of Materials as a single, pre-labeled SKU to reduce logistics complexity.',
+    icon: 'Factory'
+  },
+  {
+    id: 's4',
+    title: 'Industrial Computing & Edge AI',
+    description: 'Sourcing rugged Fanless PCs, AI Inference Systems, and Machine Vision Cameras. We supply the high performance compute hardware required for Edge AI, Visual Inspection, and harsh industrial environments. ',
+    icon: 'Search'
+  }
+];
+
+
+export const SERVICE: ServiceItem[] = [
+  {
+    id: 's1',
+    title: 'High Performance Interconnects',
+    description: 'Connectivity is the single most common point of failure in industrial environments. We source and stock rugged, high-reliability interconnects designed to withstand vibration, moisture (IP67/68), and EMI interference. Whether you need Mil-Spec circular connectors for a defense chassisor high-speed M12 data cables for AMR sensors, we secure the exactpin configurations that standard distributors often leave on backorder.',
+    icon: 'Globe'
+  },
+  {
+    id: 's2',
+    title: 'Data Center Solutions',
+    description: 'High-performance infrastructure sourcing, including Servo Motors, cooling systems, and power management units for enterprise data centers.',
+    icon: 'Layers'
+  },
+  {
+    id: 's3',
+    title: 'Unified Automation Kits',
+    description: 'Stop managing 5 different vendors for one machine. We consolidate your Motion and Control hardware into a single,pre-validated SKU.From Servo Motors and Drives to PLCs and HMIs, receive your complete "Retrofit Kit" in one shipment, ready for immediate installation. We simplify your Bill of Materials so you can focus on assembly',
     icon: 'Factory'
   },
   {
@@ -45,6 +73,13 @@ export const SERVICES: ServiceItem[] = [
     icon: 'Search'
   }
 ];
+
+
+
+
+
+
+
 
 // Helper to generate products
 const generateProducts = (): Product[] => {

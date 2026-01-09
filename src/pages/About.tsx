@@ -283,9 +283,9 @@ const About: React.FC = () => {
        {/* STATS STRIP */}
        <div className="stat-strip border-y border-white/5 bg-white/[0.02] backdrop-blur-sm mb-32 relative z-20">
           <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-white/5">
-             <StatItem label="Quote Response”" value="4" suffix="Hour" />
+             <StatItem label="Quote Response" value="4" suffix="Hour" />
              <StatItem label="Supplier Network" value="Global" suffix="" />
-             <StatItem label="Delivery Model”" value="JIT" suffix="" />
+             <StatItem label="Delivery Model" value="JIT" suffix="" />
              <StatItem label="Lead-Time Drift" value="Zero" suffix="" />
           </div>
        </div>
