@@ -1,10 +1,57 @@
 import { ProductCategory } from './types';
 import type { Product, ServiceItem, NavLink } from './types';
 // import { Cpu, Factory, Globe, Zap, Microchip, Layers, Wifi, Battery, Search } from 'lucide-react';
-import asg1 from "./photos/AgriculturalSorting&Grading/asg1.jpg";
-import asg2 from "./photos/AgriculturalSorting&Grading/asg2.jpg";
-import asg3 from "./photos/AgriculturalSorting&Grading/asg3.jpg";
-import asg4 from "./photos/AgriculturalSorting&Grading/asg4.jpg";
+import asg1 from "./photos/AgriculturalSorting&Grading/asg1.jpeg";
+import asg2 from "./photos/AgriculturalSorting&Grading/asg2.jpeg";
+import asg3 from "./photos/AgriculturalSorting&Grading/asg3.jpeg";
+import asg4 from "./photos/AgriculturalSorting&Grading/asg4.jpeg";
+
+import avss1 from "./photos/AIvisualinspectionsystrems/avss1.jpeg"
+import avss2 from "./photos/AIvisualinspectionsystrems/avss2.jpeg"
+import avss3 from "./photos/AIvisualinspectionsystrems/avss3.jpeg"
+
+import am1 from "./photos/AMR/amr1.jpeg"
+import am2 from "./photos/AMR/amr2.jpeg"
+import am3 from "./photos/AMR/amr3.jpeg"
+import am4 from "./photos/AMR/amr4.jpeg"
+
+import dci1 from "./photos/DataCenterInfrastructure/dci1.jpeg"
+import dci2 from "./photos/DataCenterInfrastructure/dci2.jpeg"
+import dci3 from "./photos/DataCenterInfrastructure/dci3.jpeg"
+import dci4 from "./photos/DataCenterInfrastructure/dci4.jpeg"
+
+
+/* EV Battery Manufacturing */
+import evbm1 from "./photos/EVBatteryManufacturing/evbm1.jpeg"
+import evbm2 from "./photos/EVBatteryManufacturing/evbm2.jpeg"
+import evbm3 from "./photos/EVBatteryManufacturing/evbm3.jpeg"
+
+/* High Speed Packaging Automation */
+import hspa1 from "./photos/High-SpeedPackagingAutomation/hspa1.jpeg"
+import hspa2 from "./photos/High-SpeedPackagingAutomation/hspa2.jpeg"
+import hspa3 from "./photos/High-SpeedPackagingAutomation/hspa3.jpeg"
+import hspa4 from "./photos/High-SpeedPackagingAutomation/hspa4.jpeg"
+
+/* Rugged Defense Computing */
+import rdc1 from "./photos/RuggedDefenseComputing/rdc1.jpeg"
+import rdc2 from "./photos/RuggedDefenseComputing/rdc2.jpeg"
+import rdc3 from "./photos/RuggedDefenseComputing/rdc3.jpeg"
+
+/* Smart Kiosk & Retail Compute */
+import skrc1 from "./photos/SmartKiosk&RetailCompute/skrc1.jpeg"
+import skrc2 from "./photos/SmartKiosk&RetailCompute/skrc2.jpeg"
+import skrc3 from "./photos/SmartKiosk&RetailCompute/skrc3.jpeg"
+
+/* Textile Machinery Modernization */
+import tmm1 from "./photos/TextileMachineryModernization/tmm1.jpeg"
+import tmm2 from "./photos/TextileMachineryModernization/tmm2.jpeg"
+import tmm3 from "./photos/TextileMachineryModernization/tmm3.jpeg"
+
+/* Warehouse Logistics */
+import wl1 from "./photos/WarehouseLogistics/wl1.jpeg"
+import wl2 from "./photos/WarehouseLogistics/wl2.jpeg"
+import wl3 from "./photos/WarehouseLogistics/wl3.jpeg"
+
 
 
 
@@ -88,84 +135,43 @@ export const SERVICE: ServiceItem[] = [
 
 
 export const PRODUCTS: Product[] = [
-  {
-    id: "prod-1",
-    name: "K-Tech Power Series 101",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance power supply solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: asg1,
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-2",
-    name: "K-Tech Sensor Series 102",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance sensors solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: asg2,
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-3",
-    name: "K-Tech Control Series 103",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance control systems solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: asg3,
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-4",
-    name: "K-Tech Automation Series 104",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance automation solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: asg4,
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-5",
-    name: "K-Tech Power Series 105",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance power supply solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: "https://picsum.photos/400/300?random=5",
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-6",
-    name: "K-Tech Sensor Series 106",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance sensors solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: "https://picsum.photos/400/300?random=6",
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-7",
-    name: "K-Tech Control Series 107",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance control systems solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: "https://picsum.photos/400/300?random=7",
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-8",
-    name: "K-Tech Automation Series 108",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance automation solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: "https://picsum.photos/400/300?random=8",
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-9",
-    name: "K-Tech Power Series 109",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance power supply solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: "https://picsum.photos/400/300?random=9",
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  },
-  {
-    id: "prod-10",
-    name: "K-Tech Sensor Series 110",
-    category: ProductCategory.SEMICONDUCTORS,
-    description: "High-performance sensors solution for industrial and consumer electronics. Designed for durability and efficiency.",
-    image: "https://picsum.photos/400/300?random=10",
-    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
-  }
+  { id: "prod-1", name: "Smart Warehouse System", category: ProductCategory.WAREHOUSE, description: "Automated warehouse operations", image: wl1 },
+  { id: "prod-2", name: "AI Visual Inspection", category: ProductCategory.VISUAL, description: "AI powered quality inspection", image: avss2 },
+  { id: "prod-3", name: "EV Battery Line", category: ProductCategory.EVBATTERY, description: "Precision battery manufacturing", image: evbm1 },
+  { id: "prod-4", name: "Agricultural Sorting Unit", category: ProductCategory.SORTING, description: "Automated crop sorting", image: asg3 },
+  { id: "prod-5", name: "Autonomous Mobile Robot", category: ProductCategory.AMR, description: "Smart autonomous movement", image: am1 },
+  { id: "prod-6", name: "Data Center Module", category: ProductCategory.DATA, description: "Reliable data center infrastructure", image: dci4 },
+  { id: "prod-7", name: "Retail Smart Kiosk", category: ProductCategory.SMART, description: "Interactive retail experience", image: skrc2 },
+  { id: "prod-8", name: "High Speed Packaging", category: ProductCategory.HIGHSPEED, description: "Fast automated packaging", image: hspa3 },
+  { id: "prod-9", name: "Defense Computing System", category: ProductCategory.RUGGED, description: "Rugged defense grade computing", image: rdc1 },
+  { id: "prod-10", name: "Textile Automation Upgrade", category: ProductCategory.TEXTILE, description: "Modern textile machinery upgrade", image: tmm1 },
+
+  { id: "prod-11", name: "Smart Logistics Platform", category: ProductCategory.WAREHOUSE, description: "Efficient logistics automation", image: wl2 },
+  { id: "prod-12", name: "AI Inspection Advanced", category: ProductCategory.VISUAL, description: "High accuracy defect detection", image: avss1 },
+  { id: "prod-13", name: "Battery Manufacturing System", category: ProductCategory.EVBATTERY, description: "Scalable EV battery production", image: evbm2 },
+  { id: "prod-14", name: "Agricultural Grading Machine", category: ProductCategory.SORTING, description: "Precision crop grading", image: asg1 },
+  { id: "prod-15", name: "Autonomous Robot Fleet", category: ProductCategory.AMR, description: "Multi robot coordination", image: am4 },
+  { id: "prod-16", name: "Enterprise Data Center", category: ProductCategory.DATA, description: "High availability infrastructure", image: dci1 },
+  { id: "prod-17", name: "Retail Compute System", category: ProductCategory.SMART, description: "Smart retail computing", image: skrc1 },
+  { id: "prod-18", name: "Packaging Automation Line", category: ProductCategory.HIGHSPEED, description: "High throughput packaging", image: hspa1 },
+  { id: "prod-19", name: "Military Computing Unit", category: ProductCategory.RUGGED, description: "Extreme environment computing", image: rdc3 },
+  { id: "prod-20", name: "Textile Smart Control", category: ProductCategory.TEXTILE, description: "Digitized textile operations", image: tmm3 },
+
+  { id: "prod-21", name: "Warehouse Automation Hub", category: ProductCategory.WAREHOUSE, description: "Smart material handling", image: wl3 },
+  { id: "prod-22", name: "Visual Inspection System", category: ProductCategory.VISUAL, description: "Automated visual quality checks", image: avss3 },
+  { id: "prod-23", name: "EV Battery Assembly", category: ProductCategory.EVBATTERY, description: "Advanced battery assembly", image: evbm3 },
+  { id: "prod-24", name: "Agricultural Sorting Plant", category: ProductCategory.SORTING, description: "High speed produce sorting", image: asg4 },
+  { id: "prod-25", name: "Mobile Robot Platform", category: ProductCategory.AMR, description: "Autonomous industrial transport", image: am2 },
+  { id: "prod-26", name: "Modular Data Center", category: ProductCategory.DATA, description: "Scalable data infrastructure", image: dci2 },
+  { id: "prod-27", name: "Smart Retail Terminal", category: ProductCategory.SMART, description: "Self service retail solution", image: skrc3 },
+  { id: "prod-28", name: "Packaging Robotics System", category: ProductCategory.HIGHSPEED, description: "Robotic packaging automation", image: hspa4 },
+  { id: "prod-29", name: "Rugged Computing Platform", category: ProductCategory.RUGGED, description: "Mission critical computing", image: rdc2 },
+  { id: "prod-30", name: "Textile Modernization System", category: ProductCategory.TEXTILE, description: "Legacy textile modernization", image: tmm2 },
+
+  { id: "prod-31", name: "Agricultural Processing Unit", category: ProductCategory.SORTING, description: "Smart agricultural processing", image: asg2 },
+  { id: "prod-32", name: "Mobile Robot Controller", category: ProductCategory.AMR, description: "Autonomous robot control", image: am3 },
+  { id: "prod-33", name: "High Speed Packaging Line", category: ProductCategory.HIGHSPEED, description: "Ultra fast packaging system", image: hspa2 },
+  { id: "prod-34", name: "Data Center Control System", category: ProductCategory.DATA, description: "Centralized infrastructure control", image: dci3 }
 ];
+
+

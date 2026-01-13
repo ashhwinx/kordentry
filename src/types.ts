@@ -4,17 +4,21 @@ export interface Product {
   category: string;
   description: string;
   image: string;
-  specs: string[];
+
 }
 
 // FIX: Replacing Enum with 'as const' object to fix TS1294
 export const ProductCategory = {
-  SEMICONDUCTORS: "Semiconductors",
-  PASSIVE: "Passive Components",
-  SENSORS: "Sensors",
-  CONNECTORS: "Connectors",
-  IOT: "IoT Modules",
-  POWER: "Power Management"
+  WAREHOUSE: "Warehouse Logistics", //wl
+  TEXTILE: "Textile Machinery Modernization",  //tmm
+  VISUAL: "AI visual inspection systrems", //avss
+  AMR: "AMR", //amr
+  EVBATTERY: "EV Battery Manufacturing", //evbm
+  DATA: "Data Center Infrastructure", //dci
+  SMART: "Smart Kiosk & Retail Compute", //skrc
+  RUGGED: "Rugged Defense Computing", //rdc
+  SORTING: "Agricultural Sorting & Grading", //asg
+  HIGHSPEED: "High-Speed Packaging Automation", //hspa
 } as const;
 
 // Creating a type from the object values
