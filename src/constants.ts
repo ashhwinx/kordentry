@@ -1,6 +1,12 @@
 import { ProductCategory } from './types';
 import type { Product, ServiceItem, NavLink } from './types';
-import { Cpu, Factory, Globe, Zap, Microchip, Layers, Wifi, Battery, Search } from 'lucide-react';
+// import { Cpu, Factory, Globe, Zap, Microchip, Layers, Wifi, Battery, Search } from 'lucide-react';
+import asg1 from "./photos/AgriculturalSorting&Grading/asg1.jpg";
+import asg2 from "./photos/AgriculturalSorting&Grading/asg2.jpg";
+import asg3 from "./photos/AgriculturalSorting&Grading/asg3.jpg";
+import asg4 from "./photos/AgriculturalSorting&Grading/asg4.jpg";
+
+
 
 export const COMPANY_INFO = {
   name: "Korden Technologies",
@@ -81,23 +87,85 @@ export const SERVICE: ServiceItem[] = [
 
 
 
-// Helper to generate products
-const generateProducts = (): Product[] => {
-  const products: Product[] = [];
-  const categories = Object.values(ProductCategory);
-  
-  for (let i = 1; i <= 30; i++) {
-    const category = categories[i % categories.length];
-    products.push({
-      id: `prod-${i}`,
-      name: `K-Tech ${category.split(' ')[0]} Series ${100 + i}`,
-      category: category,
-      description: `High-performance ${category.toLowerCase()} solution for industrial and consumer electronics. Designed for durability and efficiency.`,
-      image: `https://picsum.photos/400/300?random=${i}`,
-      specs: ['Industrial Grade', 'RoHS Compliant', 'High Efficiency']
-    });
+export const PRODUCTS: Product[] = [
+  {
+    id: "prod-1",
+    name: "K-Tech Power Series 101",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance power supply solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: asg1,
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-2",
+    name: "K-Tech Sensor Series 102",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance sensors solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: asg2,
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-3",
+    name: "K-Tech Control Series 103",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance control systems solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: asg3,
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-4",
+    name: "K-Tech Automation Series 104",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance automation solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: asg4,
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-5",
+    name: "K-Tech Power Series 105",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance power supply solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: "https://picsum.photos/400/300?random=5",
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-6",
+    name: "K-Tech Sensor Series 106",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance sensors solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: "https://picsum.photos/400/300?random=6",
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-7",
+    name: "K-Tech Control Series 107",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance control systems solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: "https://picsum.photos/400/300?random=7",
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-8",
+    name: "K-Tech Automation Series 108",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance automation solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: "https://picsum.photos/400/300?random=8",
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-9",
+    name: "K-Tech Power Series 109",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance power supply solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: "https://picsum.photos/400/300?random=9",
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
+  },
+  {
+    id: "prod-10",
+    name: "K-Tech Sensor Series 110",
+    category: ProductCategory.SEMICONDUCTORS,
+    description: "High-performance sensors solution for industrial and consumer electronics. Designed for durability and efficiency.",
+    image: "https://picsum.photos/400/300?random=10",
+    specs: ["Industrial Grade", "RoHS Compliant", "High Efficiency"]
   }
-  return products;
-};
-
-export const PRODUCTS = generateProducts();
+];

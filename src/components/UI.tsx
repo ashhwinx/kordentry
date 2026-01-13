@@ -165,7 +165,7 @@ export const SectionTitle: React.FC<{ title: string, subtitle?: string, align?: 
 
 export const Card: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className = '' }) => {
   return (
-    <div className={`bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:border-purple-500/40 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.1)] group hover:-translate-y-1 ${className}`}>
+    <div className={`bg-black/40 backdrop-blur-xl border border-white/10 p-8  rounded-3xl hover:border-purple-500/40 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.1)] group hover:-translate-y-1 ${className}`}>
       {children}
     </div>
   );

@@ -36,7 +36,9 @@ const ProductCard = React.memo(({ product }: { product: any }) => (
     className="h-full"
   >
     <Card className="group p-0 overflow-hidden flex flex-col h-full hover:border-amber-500/30 transition-colors duration-300 bg-[#121212]">
-      <div className="relative h-48 overflow-hidden bg-slate-900">
+      
+      {/* Image Section */}
+      <div className="relative h-68 overflow-hidden bg-slate-900">
         <img 
           src={product.image} 
           alt={product.name} 
@@ -50,21 +52,23 @@ const ProductCard = React.memo(({ product }: { product: any }) => (
           </span>
         </div>
       </div>
+
+      {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-white mb-2 font-['Syne']">{product.name}</h3>
-        <p className="text-slate-400 text-sm mb-4 line-clamp-2">{product.description}</p>
-        
-        <div className="flex flex-wrap gap-2 mb-6">
-          {product.specs.map((spec: string) => (
-              <span key={spec} className="text-xs text-slate-400 bg-white/5 border border-white/5 px-2 py-0.5 rounded">
-                {spec}
-              </span>
-          ))}
-        </div>
+        <h3 className="text-xl font-bold text-white mb-2 font-['Syne']">
+          {product.name}
+        </h3>
+
+        <p className="text-slate-400 text-sm mb-6 line-clamp-2">
+          {product.description}
+        </p>
 
         <div className="mt-auto">
           <Link to="/contact" className="w-full block">
-            <Button variant="secondary" className="w-full text-sm py-2 hover:text-amber-500 hover:border-amber-500/50 transition-colors">
+            <Button 
+              variant="secondary" 
+              className="w-full text-sm py-2 hover:text-amber-500 hover:border-amber-500/50 transition-colors"
+            >
               Get Quote
             </Button>
           </Link>
@@ -73,6 +77,7 @@ const ProductCard = React.memo(({ product }: { product: any }) => (
     </Card>
   </motion.div>
 ));
+
 
 const Products: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
