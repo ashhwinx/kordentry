@@ -454,7 +454,7 @@ and high demand Components and Automation hardware.
             {SERVICES.slice(0, 4).map((_service, index) => (
                 <div key={`mobile-bg-${index}`} 
                      className={`absolute inset-0 transition-opacity duration-700 ${activeService === index ? 'opacity-30' : 'opacity-0'}`}>
-                    <img src={`https://picsum.photos/1000/800?random=${index + 100}`} className="w-full h-full object-cover grayscale" alt="" />
+                    <img src={_service.image} className="w-full h-full object-cover grayscale" alt="" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/90 to-[#050505]/50" />
                 </div>
             ))}
@@ -514,7 +514,7 @@ and high demand Components and Automation hardware.
                         return (
                             <div key={SERVICES[index].id} className={`absolute inset-0 transition-all duration-700 ease-in-out ${activeService === index ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105'}`}>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
-                                <img src={`https://picsum.photos/1000/800?random=${index + 100}`} alt={SERVICES[index].title} className="w-full h-full object-cover filter saturate-[0.8] contrast-[1.1]" />
+                                <img src={_service.image} alt={SERVICES[index].title} className="w-full h-full object-cover filter saturate-[0.8] contrast-[1.1]" />
                                 
                                 <div className="absolute bottom-0 left-0 w-full p-6 lg:p-10 z-20">
                                     <h2 className="text-2xl lg:text-4xl font-bold text-white mb-3 lg:mb-4 font-['Syne'] leading-tight drop-shadow-lg">

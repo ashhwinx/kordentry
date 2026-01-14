@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import { SectionTitle } from '../components/UI';
-import { Target, Users, Globe, Zap, ShieldCheck } from 'lucide-react';
+import { Target, Users, Globe, Zap, ShieldCheck, BadgeCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+import partner from "../photos/partnerLogo.jpeg"
 
 // --- GSAP IMPORTS FOR PARALLAX & STATS ---
 import gsap from 'gsap';
@@ -355,7 +356,7 @@ const About: React.FC = () => {
            </div>
        </div>
 
-       {/* VALUES GRID */}
+       {/* VALUES GRID (CORE PRINCIPLES) */}
        <div className="max-w-7xl mx-auto px-4 mb-32 relative z-10">
            <SectionTitle title="Core Principles" subtitle="Our DNA" />
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -375,6 +376,53 @@ const About: React.FC = () => {
                   desc="Markets change. Production schedules shift. We adapt instantly, using predictive sourcing to keep your lines running."
                />
            </div>
+       </div>
+
+       {/* --- NEW SECTION: CHANNEL PARTNERS (Now Below Core Principles) --- */}
+       <div className="max-w-7xl mx-auto px-4 mb-32 relative z-10">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="flex flex-col items-center text-center"
+          >
+            <motion.div variants={textVariants} className="mb-16">
+              <span className="inline-block text-amber-500 font-bold tracking-[0.3em] uppercase text-xs md:text-sm border-x-2 border-amber-500 px-6 mb-4">
+                  Authorized Alliances
+              </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white font-['Syne']">Channel Partners</h2>
+            </motion.div>
+
+            <motion.div variants={textVariants} className="w-full max-w-lg">
+               {/* Single Partner Card - Center Aligned */}
+               <div className="group relative p-[1px] rounded-3xl overflow-hidden bg-white/5 hover:bg-white/10 transition-all duration-500">
+                  <div className="bg-[#050507]/60 backdrop-blur-md rounded-[23px] p-12 h-full flex flex-col items-center justify-center border border-white/5 relative overflow-hidden">
+                     {/* Subtle Glow */}
+                     <div className="absolute -inset-24 bg-amber-500/5 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                     
+                     <div className="relative z-10 w-full flex flex-col items-center">
+                        {/* VERY LARGE LOGO CONTAINER */}
+                        <div className="w-56 h-56 mb-8 rounded-2xl bg-white/[0.03] flex items-center justify-center  group-hover:scale-105 transition-all duration-700 border border-white/5 group-hover:border-amber-500/20">
+                           {/* Replace src with actual brand logo */}
+                           <img 
+                              src = {partner}
+                              alt="Brand Logo" 
+                              className="w-full h-full object-contain  opacity-100 transition-all duration-1000" 
+                           />
+                        </div>
+                        
+                        <h4 className="text-3xl font-bold text-white font-['Syne'] tracking-tight mb-4 group-hover:text-amber-500 transition-colors">ASRock</h4>
+                        
+                        <div className="flex items-center gap-2 px-5 py-2 bg-amber-500/5 rounded-full border border-amber-500/10">
+                           <BadgeCheck size={18} className="text-amber-500" />
+                           <span className="text-xs text-slate-300 uppercase tracking-[0.2em] font-['Space_Grotesk'] font-bold">Official Distribution Partner</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </motion.div>
+          </motion.div>
        </div>
        
        {/* CTA */}

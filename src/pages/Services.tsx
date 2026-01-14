@@ -36,7 +36,7 @@ const ServiceCardHorizontal: React.FC<{ service: any; index: number }> = React.m
       {/* 1. VISUAL PANEL */}
       <div className={`relative w-full md:w-[45%] h-64 md:h-auto overflow-hidden border-b md:border-b-0 ${isEven ? 'md:order-1 md:border-r border-white/10' : 'md:order-2 md:border-l border-white/10'}`}>
          <img 
-            src={`https://picsum.photos/800/600?random=${index + 20}`} 
+            src={service.image} 
             alt={service.title}
             className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110 filter saturate-[0.8] group-hover:saturate-100 brightness-90 group-hover:brightness-110"
             loading="lazy"
