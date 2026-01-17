@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+// HashRouter ko hata kar BrowserRouter import kiya hai
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
 import FuturisticBackground from './components/FuturisticBackground';
 import CustomCursor from './components/CustomCursor';
@@ -34,8 +35,8 @@ const App: React.FC = () => {
   useLayoutEffect(() => {
     // 1. Initialize Lenis
     const lenis = new Lenis({
-      duration: 1.2, // The "heaviness" of the scroll (higher = smoother/slower)
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing
+      duration: 1.2, 
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
       orientation: 'vertical', 
       gestureOrientation: 'vertical',
       smoothWheel: true,
@@ -44,16 +45,14 @@ const App: React.FC = () => {
     });
 
     // 2. Connect Lenis to GSAP ScrollTrigger
-    // This updates ScrollTrigger positions whenever Lenis scrolls
     lenis.on('scroll', ScrollTrigger.update);
 
-    // 3. Sync GSAP Ticker with Lenis RAF (Request Animation Frame)
-    // This is the MAGIC part that makes animations lag-free
+    // 3. Sync GSAP Ticker with Lenis RAF
     gsap.ticker.add((time) => {
-      lenis.raf(time * 1000); // Convert time to ms
+      lenis.raf(time * 1000); 
     });
 
-    // 4. Disable GSAP lag smoothing to ensure instant sync
+    // 4. Disable GSAP lag smoothing
     gsap.ticker.lagSmoothing(0);
 
     // Cleanup function
@@ -65,7 +64,8 @@ const App: React.FC = () => {
   // --- LENIS SETUP END ---
 
   return (
-    <HashRouter>
+    // HashRouter ki jagah Router (BrowserRouter) use kiya hai
+    <Router>
       <div className="relative min-h-screen text-slate-100 selection:bg-purple-500/30 selection:text-amber-400">
         <CustomCursor />
         <FuturisticBackground />
@@ -82,7 +82,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
       </div>
-    </HashRouter>
+    </Router>
   );
 };
 

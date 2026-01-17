@@ -59,7 +59,8 @@ const ProductCard = React.memo(({ product }: { product: any }) => (
           {product.name}
         </h3>
 
-        <p className="text-slate-400 text-sm mb-6 line-clamp-2">
+        {/* FIX: line-clamp-2 ko remove kar diya hai taaki pura text dikhe */}
+        <p className="text-slate-400 text-sm mb-6">
           {product.description}
         </p>
 

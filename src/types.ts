@@ -4,13 +4,14 @@ export interface Product {
   category: string;
   description: string;
   image: string;
+  
 
 }
 
 // FIX: Replacing Enum with 'as const' object to fix TS1294
 export const ProductCategory = {
-  MOUNTS:"Mounts",
-  FLANGES:"Flanges",
+  // MOUNTS:"Mounts",
+  // FLANGES:"Flanges",
   AUTOMATION: "Automation kit",
   INTERCONNECTS : "Interconnects",
 } as const;
